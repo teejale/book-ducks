@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "SiteSetting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Theme": {
+      "type": "string"
+    },
+    "ChangeTheme": {
+      "type": "enumeration",
+      "enum": [
+        "Default",
+        "Summer",
+        "Winter",
+        "Dark"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_theme_customizations",
+  "info": {
+    "displayName": "Seasons",
+    "icon": "paint"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

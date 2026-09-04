@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Genre": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Mystery",
+        "Thriller",
+        "Fantasy",
+        "Romance",
+        "Classics",
+        "Historical",
+        "Self-help",
+        "Cookbook",
+        "Children",
+        "Fiction",
+        "Biography",
+        "Memoir",
+        "Science",
+        "Science Fiction",
+        "Psychological",
+        "Philosofy",
+        "Poetry",
+        "Religion",
+        "Travel",
+        "Young Adult",
+        "Magic Realism"
+      ]
+    },
+    "books": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::book.book"
+    }
+  }
+}
