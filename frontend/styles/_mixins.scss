@@ -1,0 +1,42 @@
+// //flexbox
+// @mixin flexbox-main($justify: center, $align: center ,$direction: column) {
+//   justify-content: $justify;
+//   align-items: center;
+//   flex-direction: column;
+
+// }
+
+
+@mixin flexbox-main($justify: center, $align: center, $direction: column) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+
+}
+
+@mixin button ($radius: 7px, $padding: 5px) {
+  border-radius: $radius;
+  padding: $padding;
+  border-style: none;
+}
+
+@mixin secondaryBtn ($radius: 7px, $padding: 5px) {
+  border-radius: $radius;
+  padding: $padding;
+  border-style: none;
+  background-color: #fff;
+}
+
+@mixin column($float: left, $width: 65%, $flex: 65%) {
+  float: $float;
+  width: $width;
+  flex: $flex;
+  padding: 5px;
+}
+
+@mixin row ($padding: 5px){
+  display: flex;
+  position: relative;
+  padding: $padding
+}

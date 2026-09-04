@@ -1,0 +1,56 @@
+.book-info-box {
+  @include flexbox-main($direction: row);
+  border-radius: 10px;
+  position: relative;
+  min-height: 100vh;
+  width: 80%;
+
+  .book {
+    @include column($width: 100%);
+    height: 450px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .book-info {
+    @include row;
+    width: 50%;
+    font-size: 20px;
+  }
+
+  #buyBtn {
+    @include flexbox-main;
+    position: absolute;
+    bottom: 30%;
+    right: 20%;
+    height: 50px;
+    width: 80px;
+    font-size: 15px;
+    padding: 15px;
+    margin-left: 30px;
+    background-color: #ff7b61;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.47);
+
+    &:hover {
+      background-color: #f88068;
+    }
+  }
+
+  #saveBookBtn {
+    @include flexbox-main;
+    position: absolute;
+    bottom: 30%;
+    right: 30%;
+    height: 50px;
+    font-size: 15px;
+    padding: 15px;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.47);
+
+    &:hover {
+      background-color: #f9ba61;
+    }
+  }
+}

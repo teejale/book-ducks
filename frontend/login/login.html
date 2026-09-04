@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js"></script>
+  <script type="module" src="login.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="duck">
+      <a href="../index/index.html">
+        <img src="../images/cansu-sarp-Ti1hrrdtoQ8-unsplash-removebg-preview.png" alt="book ducks logo">
+    </div>
+    <h1>Book ducks</h1>
+    </a>
+  </header>
+  <nav>
+    <span class="hidden" id="logInBtn">
+      <a href="../login/login.html"><u>Login</u>
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+      </a>
+    </span>
+
+    <span>
+      <a href="../index/index.html">Home
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </span>
+
+    <span>
+      <a href="../books/books.html">Books
+        <i class="fa-solid fa-book"></i>
+      </a>
+    </span>
+  </nav>
+  <main>
+    <div class="row" id="row">
+      <img src="../images/rigel-qu8Xjs5cZ4c-unsplash.jpg" alt="books on display" class="cta-image">
+      <div class="column" id="login-column">
+
+        <form id="apply-form" autocomplete="on">
+          <h2 id="noAuth-para">Login</h2>
+
+          <div class="input-box">
+            <label for="input-email" required></label>
+            <input type="email" name="email" id="input-email" autocomplete="on" placeholder="Email">
+          </div>
+
+          <div class="input-box">
+            <label for="input-password"></label>
+            <input type="password" name="input-password" id="input-password" placeholder="Password">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+
+          <div>
+            <button type="submit" id="login-btn">Login</button>
+          </div>
+
+          <div>
+            <h4>Login to get access to your own reading nook</h4>
+          </div>
+
+          <div class="account-check">
+            <a href="../register/register.html">Don't have an account?</a>
+          </div>
+      </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>Book Ducks 2026</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+header.Default {
+  background-color: $defaultHeadFoot;
+  color: $defaultText;
+
+}
+
+nav.Default {
+  background-color: $defaultNav;
+  color: $defaultText;
+  a {
+    color: inherit; 
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+
+main.Default {
+  background-color: $defaulMain;
+  color: $defaultText;
+}
+
+footer.Default {
+  @include flexbox-main ($direction: flex-start);
+  background-color: $defaultHeadFoot;
+  color: $defaultText;
+}
+
+
+header.Summer {
+  background-color: $summerHeadFoot;
+  color: $summerText;
+}
+nav.Summer {
+  background-color: $summerNav;
+  color: $summerText;
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+main.Summer {
+  background-color: $summerMain;
+  color: $summerText;
+}
+footer.Summer {
+  @include flexbox-main ($direction: flex-start);
+  background-color: $summerHeadFoot;
+  color: $summerText;
+}
+
+header.Winter {
+  background-color: $winterHeadFoot;
+  color: $winterText;
+}
+nav.Winter {
+  background-color: $winterNav;
+  color: $winterText;
+  a {
+    color: inherit; 
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+main.Winter {
+  background-color: $winterMain;
+  color: $winterText;
+}
+footer.Winter {
+  @include flexbox-main ($direction: flex-start);
+  background-color: $winterHeadFoot;
+  color: $winterText;
+  font-size: 15px;
+  
+}
+
+header.Dark {
+  background-color: $darkHeadFoot;
+  color: $darkText;
+}
+nav.Dark {
+  background-color: $darkNav;
+  a, i, span {
+    color: $darkText;
+    font-size: 18px;
+    a:visited {
+      color: inherit; 
+      text-decoration: none;
+    }
+  }
+}
+main.Dark {
+  background-color: $darkMain;
+  color: $darkText;
+}
+footer.Dark {
+  @include flexbox-main ($direction: flex-start);
+  background-color: $darkHeadFoot;
+  color: $darkText;
+}
+
+#heroBox {
+    @include flexbox-main($justify: space-between, $align: space-between, $direction: row);
+    position: relative;
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+#heroText {
+  @include flexbox-main;
+  position: absolute;
+  height: 30%;
+  border-radius: 10px;
+  z-index: 1;
+  background-color: white;
+  Bottom: 40%;
+  left: 15%;
+  gap: 2em;
+  margin: 10px;
+  padding: 5px;
+  h2 {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>main page</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js"></script>
+  <script type="module" src="index.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="duck">
+      <img src="../images/cansu-sarp-Ti1hrrdtoQ8-unsplash-removebg-preview.png" alt="book ducks logo">
+    </div>
+    <h1>Book ducks</h1>
+  </header>
+
+  <nav>
+    <span class="hidden" id="logInBtn">
+      <a href="../login/login.html">
+      <i class="fa-solid fa-arrow-right-to-bracket"></i>
+      <span class="menuItem">Log in</span>
+      </a>
+    </span>
+    <span class="hidden" id="logout">
+      <a href="../index/index.html">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      <span class="menuItem">Log out</span>
+      </a>
+    </span>
+    <span>
+      <a href="../index/index.html">
+      <i class="fa-solid fa-house"></i>
+      <span class="menuItem"><u>Home</u></span>
+      </a>
+    </span>
+    <span>
+      <a href="../books/books.html">
+      <i class="fa-solid fa-book"></i>
+      <span class="menuItem">Books</span>
+      </a>
+    </span>
+    <span id="profileBtn" class="hidden">
+      <a href="../profile/profile.html">
+      <i class="fa-solid fa-circle-user"></i>
+      </a>
+    </span>
+  </nav>
+
+  <main>
+    <div class="column">
+      <!-- <div class="welcome"><h1><strong>Welcome To Book Ducks</strong></h1></div> -->
+      <div class="row" id="heroBox"></div>
+      <div id="heroText"></div>
+    </div>
+    
+    <div>
+
+    </div>
+  </main>
+  
+  <footer>
+    <p>2026 Book Ducks AB</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+#usersSavedBooks {
+  display: grid;
+  gap: 10px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 4px;
+
+  article {
+    position: relative;
+    @include flexbox-main;
+    margin-top: 50px;
+    gap: 15px;
+
+    &:first-child {
+      margin-top: 40px;
+    }
+
+    button {
+      @include flexbox-main;
+      margin-top: 2%;
+    }
+  }
+}
+
+.column {
+  @include column($width: 100%);
+  @include flexbox-main;
+  min-height: 100vh;
+
+  .usersContainer {
+    position: relative;
+    float: left;
+    height: 700px;
+    width: 70%;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+
+    .usersContent {
+      overflow-y: auto;
+      height: 100%;
+
+      .usersTab {
+        font-size: 18px;
+        #savedBookText {
+          margin-top: 30px;
+          font-size: 30px;
+        }
+        button {
+          padding: 5px;
+          height: 40px;
+          box-shadow: 0.2px 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.47);
+          &:hover {
+            padding: 7px;
+          }
+        }
+      }
+
+      #uploadBooks {
+        @include flexbox-main($direction: column);
+        gap: 15px;
+        height: inherit;
+        width: 100%;
+
+        .inputs {
+          align-content: center;
+        }
+
+        #img-upload {
+          margin-left: 10%;
+        }
+      }
+    }
+
+    .usersNavBar {
+      @include flexbox-main;
+      gap: 50px;
+      float: left;
+      height: inherit;
+      width: 20%;
+      background-color: $primary-color;
+
+      .tabBtn {
+        font-size: 18px;
+        gap: 10px;
+        display: block;
+        height: calc(100% / 4);
+        width: 100%;
+        cursor: pointer;
+        background-color: $primary-btn;
+      }
+    }
+  }
+
+  .uploadInput:not([type="file"]) {
+    align-self: center;
+    width: 30%;
+    height: 35px;
+    padding-right: 40px; // space for icon
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+}

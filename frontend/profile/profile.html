@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js"></script>
+  <script type="module" src="profile.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="duck">
+      <a href="../index/index.html">
+        <img src="../images/cansu-sarp-Ti1hrrdtoQ8-unsplash-removebg-preview.png" alt="book ducks logo">
+      </a>
+    </div>
+    <h1>Book ducks</h1>
+    
+  </header>
+  <nav>
+    <span id="logout" class="hidden">
+      <!-- <a href="../index/index.html">Logout -->
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      <span class="menuItem">Log out</span>
+      </a>
+    </span>
+    <span>
+      <a href="../index/index.html">
+        <i class="fa-solid fa-house"></i>
+        <span class="menuItem">Home</span>
+      </a>
+    </span>
+    <span>
+      <a href="../books/books.html">
+        <i class="fa-solid fa-book"></i>
+        <span class="menuItem">Books</span>
+      </a>
+    </span>
+    <span id="profileBtn" class="hidden">
+      <a href="../profile/profile.html">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+    </span>
+  </nav>
+
+  <main>
+    <div class="column">
+      <div class="usersContainer" id="usersContainer">
+        <div class="usersNavBar">
+          <button id="profile" class="tab"></button>
+          <button class="tabBtn" data-tab="savedBooks">Saved Books</button>
+          <!-- <button class="tabBtn" data-tab="ratings">Ratings</button> -->
+          <button class="tabBtn" data-tab="uploadBooks">Upload Books</button>
+        </div>
+        <div class="usersContent">
+          <!--------------- Saved Books and Sort------------------------->
+          <div id ="savedBooks" class ="usersTab">
+            <button class="button" id="sortTitleBtn">
+              <div id="">
+                <p>Title</p>
+              </div>
+            </button>
+            <button class="button" id="sortAuthorBtn">
+              <div>
+                <p>Author</p>
+              </div>
+            </button>
+            <div id="savedBookText">
+              <p>Saved Books</p>
+            </div>
+            <div id="usersSavedBooks"></div>
+          </div>
+          <!--------------------- ratings----------------------->
+          <!-- <div id="ratings" class= "usersTab hidden">
+            <h3>Book ratings</h3>
+            <div id="usersRatings"></div>
+          </div> -->
+          <!------------------- Upload books---------------- -->
+          <div id="uploadBooks" class= "usersTab hidden">
+              <p>Upload book</p>
+              <label for="input-title">Title</label>
+              <input class="uploadInput" type="text" name="" id="input-title">
+              <label for="input-author">Author</label>
+              <input class="uploadInput" type="text" name="" id="input-author">
+              <label for="input-genre">Genre</label>
+              <select class="dropDown" name="" id="input-genre">
+                <option class="dropDownValue" value=""></option>
+              </select>
+              <label for="input-year">Release Year</label>
+              <input class="uploadInput" type="text" name="" id="input-year">
+              <label for="input-pages">Pages</label>
+              <input class="uploadInput" type="text" name="" id="input-pages">
+              <label for="img-upload">Upload Image</label>
+              <input type="file" name="" id="img-upload">
+              <button id="upload-btn">Upload Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Book Ducks 2026</p>
+  </footer>
+</body>
+
+</html>

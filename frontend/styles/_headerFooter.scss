@@ -1,0 +1,43 @@
+header {
+  height: 10%;
+  max-width: 100%;
+  @include flexbox-main($direction: row);
+  border-radius: 5px;
+  span {
+    font-size: large;
+    a {
+      font-size: 100px;
+      text-decoration: none;
+    }
+  }
+  .duck {
+    img {
+      align-self: center;
+      height: 80px;
+    }
+  }
+}
+
+nav {
+  min-height: 4rem;
+  @include flexbox-main($justify: space-evenly, $align: center, $direction: row);
+  a {
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    } 
+  }
+  i:hover {
+  cursor: pointer;
+  }
+  .menuItem:hover {
+    cursor: pointer;
+    
+  }
+}
+footer {
+  position: inherit;
+    height: 12vh;
+    max-width: 100%;
+}
+

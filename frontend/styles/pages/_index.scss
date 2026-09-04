@@ -1,0 +1,13 @@
+
+body {
+  min-height: auto;
+  .welcome {
+    @include flexbox-main;
+    position: absolute;
+    right: 45%;
+    z-index: 1;
+    height: 10%;
+    font-size: larger;
+
+  }
+}

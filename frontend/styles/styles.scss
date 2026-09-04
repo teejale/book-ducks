@@ -1,0 +1,11 @@
+@import "variables";
+@import "mixins";
+@import "general";
+@import "headerFooter";
+@import "components";
+@import "./pages/index";
+@import "./pages/books";
+@import "./pages/booksInfo";
+@import "./pages/profile";
+@import "./pages/login";
+@import "./pages/register";
