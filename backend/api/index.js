@@ -1,6 +1,5 @@
 'use strict';
 
-const { createStrapi } = require('@strapi/strapi');
 const path = require('node:path');
 const appDir = path.resolve(__dirname, '..');
 process.chdir(appDir);
@@ -8,7 +7,12 @@ process.chdir(appDir);
 let ready;
 module.exports = async (request, response) => {
   if (!ready) {
-    ready = createStrapi({ appDir, distDir: appDir }).load().then((strapi) => {
+    ready = Promise.resolve().then(() => {
+      // Load Strapi within the request budget, rather than Vercel's short
+      // module-initialization window.
+      const { createStrapi } = require('@strapi/strapi');
+      return createStrapi({ appDir, distDir: appDir }).load();
+    }).then((strapi) => {
       strapi.server.mount();
       return strapi.server.app.callback();
     }).catch((error) => {

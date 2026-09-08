@@ -130,3 +130,5 @@ build
 .strapi-updater.json
 .strapi-cloud.json
 node_modules
+/public/admin/
+/public/favicon.png

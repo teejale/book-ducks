@@ -2,13 +2,16 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "regions": ["arn1"],
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build && node scripts/prepare-vercel.cjs",
   "outputDirectory": "public",
   "functions": {
     "api/index.js": {
-      "includeFiles": "{package.json,config/**,database/**,src/**,dist/**,build/**,public/**,node_modules/**}",
+      "includeFiles": "{package.json,favicon.png,config/**,database/**,src/**,dist/**,build/**,public/**,node_modules/**}",
       "maxDuration": 300
     }
   },
-  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
+  "rewrites": [
+    { "source": "/favicon.ico", "destination": "/favicon.png" },
+    { "source": "/(.*)", "destination": "/api" }
+  ]
 }
