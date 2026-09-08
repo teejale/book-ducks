@@ -1,6 +1,6 @@
 import { setLoggedInState, getUserId } from "../general/general.js";
 import { changeTheme } from "../general/general.js";
-const BASE_URL = "https://book-ducks-api.vercel.app";
+import { BASE_URL, mediaUrl } from "../general/api.js";
 setLoggedInState();
 const userId = await getUserId();
 changeTheme();
@@ -111,7 +111,7 @@ const renderBooks = (books) => {
     usersSavedBooks.append(bookArticle);
 
     const bookCover = document.createElement("img");
-    bookCover.setAttribute("src", `${BASE_URL}${book.Cover.url}`);
+    bookCover.setAttribute("src", mediaUrl(book.Cover?.url));
     bookArticle.append(bookCover);
 
     const bookHeader = document.createElement("h2");

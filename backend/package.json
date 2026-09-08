@@ -18,13 +18,14 @@
     "@strapi/plugin-cloud": "5.44.0",
     "@strapi/plugin-users-permissions": "5.44.0",
     "@strapi/strapi": "5.44.0",
+    "@vercel/blob": "^2.8.0",
     "better-sqlite3": "12.8.0",
+    "pg": "^8.23.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=20.0.0 <=24.x.x",
     "npm": ">=6.0.0"

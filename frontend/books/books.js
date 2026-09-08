@@ -1,6 +1,6 @@
 import { setLoggedInState } from "../general/general.js";
 import { changeTheme } from "../general/general.js";
-const BASE_URL = "https://book-ducks-api.vercel.app";
+import { BASE_URL, mediaUrl } from "../general/api.js";
 setLoggedInState();
 changeTheme();
 
@@ -18,7 +18,7 @@ const renderPage = async () => {
 
       let bookCover = document.createElement("img");
       console.log(book);
-      bookCover.setAttribute("src", `${BASE_URL}${book.Cover.url}`);
+      bookCover.setAttribute("src", mediaUrl(book.Cover?.url));
 
       bookArticle.append(bookCover);
       console.log(bookCover)
@@ -43,16 +43,16 @@ const renderPage = async () => {
       bookFooter.append(buyBtn);
 
       readMoreBtn.addEventListener("click", () => {
-        window.location.href = `/frontend/books/bookInfo.html?id=${book.documentId}`;
+        window.location.href = `../books/bookInfo.html?id=${encodeURIComponent(book.documentId)}`;
       });
       buyBtn.addEventListener("click", () => {
         alert(`You bought ${book.Title}`);
       })
     })
   } catch (error) {
+    rowBooks.textContent = 'The book collection is unavailable right now. Please try again later.';
     console.log(" Error: could not retrieve books :" + error.message );
   }
 };
 
 renderPage();
-

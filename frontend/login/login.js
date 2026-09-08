@@ -1,6 +1,6 @@
 import { setLoggedInState } from "../general/general.js";
 import { changeTheme } from "../general/general.js";
-const BASE_URL = "https://book-ducks-api.vercel.app";
+import { BASE_URL } from "../general/api.js";
 setLoggedInState();
 changeTheme();
 
@@ -43,10 +43,9 @@ const login = async (e) => {
 
 
   } catch (error) {
-    console.log(error.response);
+    alert(error.response?.data?.error?.message || 'Login service is unavailable. Please try again later.');
   }
 
 };
 
 applyForm.addEventListener("submit", login);
-

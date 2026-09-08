@@ -3,6 +3,10 @@ const path = require('path');
 module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
 
+  if (env('VERCEL') && (client !== 'postgres' || !env('DATABASE_URL'))) {
+    throw new Error('Vercel requires DATABASE_CLIENT=postgres and a persistent DATABASE_URL. Local SQLite cannot persist between function instances.');
+  }
+
   const connections = {
     mysql: {
       connection: {

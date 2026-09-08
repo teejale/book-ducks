@@ -1,7 +1,7 @@
 import { setLoggedInState, getUserId } from "../general/general.js";
 import { changeTheme } from "../general/general.js";
 const userId = await getUserId();
-const BASE_URL = "https://book-ducks-api.vercel.app";
+import { BASE_URL, mediaUrl } from "../general/api.js";
 setLoggedInState();
 changeTheme();
 
@@ -20,7 +20,7 @@ const bookInfo = async () => {
     console.log(res);
 
     const img = document.createElement("img");
-    img.src = `${BASE_URL}${book.Cover.url}`;
+    img.src = mediaUrl(book.Cover?.url);
     bookCoverBox.append(img);
 
     const bookHeader = document.createElement("h2");
@@ -94,7 +94,7 @@ if (userId !== null) {
   };
 
   //wait for async for the data from the function
-  const bookIsSaved = (await isBookUserSaved(bookId)).data.length > 0;
+  const bookIsSaved = ((await isBookUserSaved(bookId))?.data?.length || 0) > 0;
   saveBookBtn.classList.remove("hidden");
   //styling for button if book is saved
   if (!bookIsSaved) {

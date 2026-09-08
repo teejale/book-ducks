@@ -1,6 +1,6 @@
 import { setLoggedInState } from "../general/general.js";
 import { changeTheme } from "../general/general.js";
-const BASE_URL = "https://book-ducks-api.vercel.app";
+import { BASE_URL } from "../general/api.js";
 setLoggedInState();
 changeTheme();
 
@@ -46,6 +46,10 @@ eyeSlash1.addEventListener("click", repVisibility);
 
 const login = async (e) => {
   e.preventDefault();
+  if (inputPassword.value !== inputRepPassword.value) {
+    alert('Passwords must match.');
+    return;
+  }
   const user = {
     username: inputUserName.value,
     email: inputEmail.value,
@@ -59,8 +63,7 @@ const login = async (e) => {
     }
     window.location.href = "../login/login.html";
   } catch (error) {
-    console.log(`Register failed${error.response.data}`);
+    alert(error.response?.data?.error?.message || 'Account service is unavailable. Please try again later.');
   }
 };
 applyForm.addEventListener("submit", login);
-
