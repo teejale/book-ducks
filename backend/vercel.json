@@ -5,9 +5,10 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "functions": {
-    "server.js": {
+    "api/index.js": {
       "includeFiles": "{config/**,src/**,dist/**,build/**,node_modules/**}",
       "maxDuration": 300
     }
-  }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
