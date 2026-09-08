@@ -1,6 +1,6 @@
 import { setLoggedInState, getUserId } from "../general/general.js";
 import { changeTheme } from "../general/general.js";
-const BASE_URL = "http://localhost:1337";
+const BASE_URL = "https://book-ducks-api.vercel.app";
 setLoggedInState();
 const userId = await getUserId();
 changeTheme();
