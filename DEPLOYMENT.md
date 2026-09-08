@@ -5,7 +5,7 @@ The frontend and Strapi use separate Vercel projects from this repository.
 | Project | Root directory | Purpose |
 | --- | --- | --- |
 | `book-ducks` | repository root | Publishes `frontend` using the root `vercel.json` |
-| `book-ducks-5vz8` | `backend` | Runs Strapi through `server.js` and `backend/vercel.json` |
+| `book-ducks-5vz8` | `backend` | Runs Strapi through `api/index.js` and `backend/vercel.json` |
 
 The frontend's public backend URL is set once in `frontend/general/api.js`.
 
@@ -32,11 +32,13 @@ Database and Blob connection variables are supplied by their Vercel integrations
 
 Strapi loads plugins and schemas dynamically, so the function configuration includes its application files and dependencies. The large-function option accommodates Strapi's dependency size. Preview deployments do not share the production database and need a separate database and secrets before they can run.
 
-## First deployment
+## Migrated data
 
-Verify `/_health` returns 204 and `/admin` loads. Create the administrator account personally in `/admin`. The new database starts empty: existing local content and uploads are not in this repository and must be transferred from the original Strapi instance or added in the new admin panel.
+The original `backend2` database was copied and exported with Strapi, then imported into Neon. It contains 21 published books, 20 categories, 27 ratings, homepage/settings content, and 10 application accounts. The original administrator was restored separately because Strapi's export omits administrators. Existing password hashes were preserved.
 
-Publish the Home Page and Site Setting entries, add books and covers, and configure Public role read permissions for the intended public content. Do not enable public write access or expose users' account details. Login and other account features require the appropriate Authenticated role permissions.
+All 128 original image files and variants are stored in Vercel Blob, and database image references use their public URLs. Original role permissions were imported. `backend2` is excluded from Git and deployment uploads; migration archives and credentials remain ignored in `backend/.tmp`.
+
+Verify `/_health` returns 204, `/admin` loads, and the public books and homepage appear after each deployment. Use the original administrator login at `https://book-ducks-5vz8.vercel.app/admin`.
 
 ## Limits
 

@@ -6,7 +6,7 @@
   "outputDirectory": "public",
   "functions": {
     "api/index.js": {
-      "includeFiles": "{package.json,config/**,src/**,dist/**,build/**,public/**,node_modules/**}",
+      "includeFiles": "{package.json,config/**,database/**,src/**,dist/**,build/**,public/**,node_modules/**}",
       "maxDuration": 300
     }
   },
