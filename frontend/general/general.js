@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:1337";
+const BASE_URL = "https://book-ducks-api.vercel.app";
 const logOutBtn = document.querySelector("#logout");
 const logInBtn = document.querySelector("#logInBtn");
 const profileBtn = document.querySelector("#profileBtn");
