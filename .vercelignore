@@ -1,0 +1,2 @@
+# Local database migration source; never upload it as deployment code.
+backend2/
